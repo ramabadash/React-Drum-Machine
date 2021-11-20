@@ -1,0 +1,15 @@
+.peds-list {
+  list-style: none;
+  font-size: 1.5em;
+}
+
+.peds-list > li {
+  display: inline;
+  padding: 0.5em;
+  margin-left: 0.25em;
+  background-color: slategrey;
+  border-radius: 0.2em;
+  border-color: black;
+  border-width: 0.2em;
+  border-style: groove;
+}

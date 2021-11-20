@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { bankOne, bankTwo } from '../data/drumPedsData';
+import '../styles/DrumPedsDisplay.css';
 
 export class DrumPedsDisplay extends Component {
   render() {
