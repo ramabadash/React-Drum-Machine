@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { bankOne, bankTwo } from '../data/drumPedsData';
+import { DrumPed } from './DrumPed.js';
 import '../styles/DrumPedsDisplay.css';
 
 export class DrumPedsDisplay extends Component {
@@ -7,11 +8,8 @@ export class DrumPedsDisplay extends Component {
     return (
       <div id='display'>
         <ul className='peds-list'>
-          {/* TODO REPLACE LI WITH COMPONENT */}
           {bankOne.map((pedData) => (
-            <li key={pedData.id} id={pedData.id} className='drum-pad'>
-              {pedData.keyTrigger}
-            </li>
+            <DrumPed key={pedData.id} id={pedData.id} keyTrigger={pedData.keyTrigger} />
           ))}
         </ul>
       </div>
