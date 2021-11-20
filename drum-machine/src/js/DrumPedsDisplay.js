@@ -9,7 +9,7 @@ export class DrumPedsDisplay extends Component {
       <div id='display'>
         <ul className='peds-list'>
           {bankOne.map((pedData) => (
-            <DrumPed key={pedData.id} id={pedData.id} keyTrigger={pedData.keyTrigger} />
+            <DrumPed key={pedData.id} id={pedData.id} keyTrigger={pedData.keyTrigger} audio={pedData.url} />
           ))}
         </ul>
       </div>

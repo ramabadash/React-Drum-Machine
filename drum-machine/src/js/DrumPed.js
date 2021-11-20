@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import '../styles/DrumMachine.css';
+import '../styles/DrumPed.css';
 
 export class DrumPed extends Component {
   constructor(props) {
@@ -9,6 +9,7 @@ export class DrumPed extends Component {
   render() {
     return (
       <li className='drum-pad' id={this.props.id}>
+        <audio ref='audio_tag' src={this.props.audio} className='clip' id={this.props.keyTrigger} controls />
         {this.props.keyTrigger}
       </li>
     );
