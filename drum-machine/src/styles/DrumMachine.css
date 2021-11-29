@@ -6,5 +6,6 @@
   border-radius: 0.5em;
   border-width: 0.25em;
   display: flex;
+  flex-wrap: wrap;
   padding: 0.5em;
 }
