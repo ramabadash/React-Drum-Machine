@@ -4,7 +4,10 @@ import '../styles/DrumPedsDisplay.css';
 import { bankOne, bankTwo } from '../data/drumPedsData';
 
 function DrumPedsDisplay({ playSound, soundStr }) {
+  /***** STATES *****/
   const [soundsBank, setSoundsBank] = useState(bankOne);
+
+  /***** FUNCTIONS *****/
 
   //Toggle banks btn
   const bankSlider =
@@ -33,14 +36,17 @@ function DrumPedsDisplay({ playSound, soundStr }) {
           />
         ))}
       </ul>
-      Switch sound
-      <div
-        className='switch-bank outer-select'
-        onClick={() => {
-          setSoundsBank((prevSound) => (prevSound === bankOne ? bankTwo : bankOne));
-        }}
-      >
-        <div className='inner-select' style={bankSlider}></div>
+
+      <div>
+        Switch sound
+        <div
+          className='switch-bank outer-select'
+          onClick={() => {
+            setSoundsBank((prevSound) => (prevSound === bankOne ? bankTwo : bankOne));
+          }}
+        >
+          <div className='inner-select' style={bankSlider}></div>
+        </div>
       </div>
     </div>
   );
