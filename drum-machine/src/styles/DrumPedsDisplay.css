@@ -55,4 +55,13 @@
 
 .sound-str {
   font-size: 2em;
+  padding: 1em;
+  background-color: slategrey;
+  width: 20%;
+  border-radius: 0.5em;
+  margin: auto;
+}
+
+.sound-icon {
+  font-size: 2em;
 }

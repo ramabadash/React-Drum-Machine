@@ -22,7 +22,7 @@ function DrumPedsDisplay({ playSound, soundStr }) {
   return (
     <div id='display'>
       <p className='sound-str' ref={soundStr}></p>
-      <p className='sound-str'>
+      <p className='sound-icon'>
         <i className='fas fa-drum'></i>
       </p>
       <ul className='peds-list'>
