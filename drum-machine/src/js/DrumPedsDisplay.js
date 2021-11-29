@@ -6,6 +6,16 @@ import { bankOne, bankTwo } from '../data/drumPedsData';
 function DrumPedsDisplay({ playSound, soundStr }) {
   const [soundsBank, setSoundsBank] = useState(bankOne);
 
+  //Toggle banks btn
+  const bankSlider =
+    soundsBank === bankOne
+      ? {
+          float: 'left',
+        }
+      : {
+          float: 'right',
+        };
+
   return (
     <div id='display'>
       <p className='sound-str' ref={soundStr}></p>
@@ -23,13 +33,15 @@ function DrumPedsDisplay({ playSound, soundStr }) {
           />
         ))}
       </ul>
-      <button
+      Switch sound
+      <div
+        className='switch-bank outer-select'
         onClick={() => {
           setSoundsBank((prevSound) => (prevSound === bankOne ? bankTwo : bankOne));
         }}
       >
-        Switch sound
-      </button>
+        <div className='inner-select' style={bankSlider}></div>
+      </div>
     </div>
   );
 }
