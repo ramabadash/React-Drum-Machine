@@ -65,3 +65,23 @@
 .sound-icon {
   font-size: 2em;
 }
+
+/***** SWITCH SOUND *****/
+.outer-select {
+  margin: auto;
+  border: 1px solid black;
+  width: 50px;
+  height: 20px;
+  padding: 1px;
+  background-color: black;
+  cursor: pointer;
+}
+
+.inner-select {
+  width: 23px;
+  height: 19px;
+  background: blue;
+  border: 1px solid black;
+  box-sizing: border-box;
+  cursor: pointer;
+}

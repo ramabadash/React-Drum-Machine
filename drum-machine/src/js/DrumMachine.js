@@ -3,36 +3,40 @@ import DrumPedsDisplay from './DrumPedsDisplay';
 import '../styles/DrumMachine.css';
 
 function DrumMachine() {
-  const soundStr = useRef(null);
-  const [sliderVal, setSliderVal] = useState(0.3);
+  /***** REFS & STATES *****/
+  const soundStr = useRef(null); //Sound string container element
+  const [sliderVal, setSliderVal] = useState(0.3); //Volume by slider
 
-  // Add key press event listener
+  /***** FUNCTIONS *****/
+  // Add key press event listener to document on first render
   useEffect(() => {
     window.addEventListener('keypress', onKeyPress);
   }, []);
 
-  // On key press make sound
+  // On keyboard press make sound
   const onKeyPress = (e) => {
-    const keysArray = ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'];
+    const keysArray = ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C']; //Trigger keys array
     if (keysArray.includes(e.key.toUpperCase())) {
       playSound(e.key.toUpperCase());
     }
   };
-
+  // Play the audio sound
   const playSound = (letter) => {
-    const audioElem = document.getElementById(letter);
-    audioElem.volume = sliderVal;
+    const audioElem = document.getElementById(letter); // Get audio elem by id
+    audioElem.volume = sliderVal; // Adjust volume slider
     audioElem.play(); //Play sound
     soundStr.current.textContent = audioElem.parentElement.id; //Update content
   };
-
+  //Adjust volume by moving the range elem
   const adjustVolume = (e) => {
     setSliderVal(e.target.value);
   };
 
   return (
     <div id='drum-machine' className='inner-container'>
-      <h1>My DrumMachine</h1>
+      <h1>
+        My DrumMachine <i className='fas fa-drum'></i>
+      </h1>
       <DrumPedsDisplay playSound={playSound} soundStr={soundStr} />
       <div className='volume-slider'>
         Volume

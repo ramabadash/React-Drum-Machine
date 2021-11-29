@@ -8,23 +8,15 @@ function DrumPedsDisplay({ playSound, soundStr }) {
   const [soundsBank, setSoundsBank] = useState(bankOne);
 
   /***** FUNCTIONS *****/
-
-  //Toggle banks btn
-  const bankSlider =
-    soundsBank === bankOne
-      ? {
-          float: 'left',
-        }
-      : {
-          float: 'right',
-        };
+  //Toggle banks btn style by bank state
+  const bankSlider = soundsBank === bankOne ? { float: 'left' } : { float: 'right' };
 
   return (
     <div id='display'>
+      {/* Sound name */}
       <p className='sound-str' ref={soundStr}></p>
-      <p className='sound-icon'>
-        <i className='fas fa-drum'></i>
-      </p>
+
+      {/* DrumPeds */}
       <ul className='peds-list'>
         {soundsBank.map((pedData) => (
           <DrumPed
@@ -37,6 +29,7 @@ function DrumPedsDisplay({ playSound, soundStr }) {
         ))}
       </ul>
 
+      {/* Switch sound btn */}
       <div>
         Switch sound
         <div
