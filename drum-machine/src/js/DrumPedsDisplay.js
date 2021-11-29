@@ -1,14 +1,16 @@
-import React from 'react';
-import { bankOne, bankTwo } from '../data/drumPedsData';
+import React, { useState } from 'react';
 import DrumPed from './DrumPed.js';
 import '../styles/DrumPedsDisplay.css';
+import { bankOne, bankTwo } from '../data/drumPedsData';
 
 function DrumPedsDisplay({ playSound, soundStr }) {
+  const [soundsBank, setSoundsBank] = useState(bankOne);
+
   return (
     <div id='display'>
       <p ref={soundStr}></p>
       <ul className='peds-list'>
-        {bankOne.map((pedData) => (
+        {soundsBank.map((pedData) => (
           <DrumPed
             key={pedData.id}
             id={pedData.id}
@@ -18,6 +20,13 @@ function DrumPedsDisplay({ playSound, soundStr }) {
           />
         ))}
       </ul>
+      <button
+        onClick={() => {
+          setSoundsBank((prevSound) => (prevSound === bankOne ? bankTwo : bankOne));
+        }}
+      >
+        Switch sound
+      </button>
     </div>
   );
 }
