@@ -1,15 +1,16 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import '../styles/DrumPed.css';
 
-function DrumPed({ id, audio, keyTrigger }) {
-  const audioRef = useRef(null);
-
-  const playSound = () => {
-    audioRef.current.play();
-  };
+function DrumPed({ id, audio, keyTrigger, playSound }) {
   return (
-    <li className='drum-pad' id={id} onClick={playSound}>
-      <audio ref={audioRef} src={audio} className='clip' id={keyTrigger} controls />
+    <li
+      className={`drum-pad ${keyTrigger}`}
+      id={id}
+      onClick={(e) => {
+        playSound(e.target.classList[1]); //Send the key
+      }}
+    >
+      <audio src={audio} className='clip' id={keyTrigger} controls />
       {keyTrigger}
     </li>
   );
