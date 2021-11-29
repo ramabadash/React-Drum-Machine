@@ -25,7 +25,8 @@ function DrumMachine() {
   };
 
   return (
-    <div id='drum-machine'>
+    <div id='drum-machine' className='inner-container'>
+      <h1>My DrumMachine</h1>
       <DrumPedsDisplay playSound={playSound} soundStr={soundStr} />
     </div>
   );

@@ -1,15 +1,58 @@
 .peds-list {
   list-style: none;
+  display: inline;
   font-size: 1.5em;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.Q {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.W {
+  grid-area: 2 / 3 / 3 / 4;
+}
+.E {
+  grid-area: 2 / 4 / 3 / 5;
+}
+.A {
+  grid-area: 3 / 2 / 4 / 3;
+}
+.S {
+  grid-area: 3 / 3 / 4 / 4;
+}
+.D {
+  grid-area: 3 / 4 / 4 / 5;
+}
+.Z {
+  grid-area: 4 / 2 / 5 / 3;
+}
+.X {
+  grid-area: 4 / 3 / 5 / 4;
+}
+.C {
+  grid-area: 4 / 4 / 5 / 5;
 }
 
 .peds-list > li {
   display: inline;
   padding: 0.5em;
-  margin-left: 0.25em;
+  margin: 0.25em;
   background-color: slategrey;
   border-radius: 0.2em;
   border-color: black;
   border-width: 0.2em;
-  border-style: groove;
+  border-style: double;
+  cursor: pointer;
+}
+
+.peds-list > li:hover {
+  background-color: cadetblue;
+}
+
+.sound-str {
+  font-size: 2em;
 }
