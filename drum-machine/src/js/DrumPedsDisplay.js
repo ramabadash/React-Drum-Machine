@@ -3,9 +3,10 @@ import { bankOne, bankTwo } from '../data/drumPedsData';
 import DrumPed from './DrumPed.js';
 import '../styles/DrumPedsDisplay.css';
 
-function DrumPedsDisplay({ playSound }) {
+function DrumPedsDisplay({ playSound, soundStr }) {
   return (
     <div id='display'>
+      <p ref={soundStr}></p>
       <ul className='peds-list'>
         {bankOne.map((pedData) => (
           <DrumPed

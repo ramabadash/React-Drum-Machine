@@ -3,6 +3,8 @@ import DrumPedsDisplay from './DrumPedsDisplay';
 import '../styles/DrumMachine.css';
 
 function DrumMachine() {
+  const soundStr = useRef(null);
+
   // Add key press event listener
   useEffect(() => {
     window.addEventListener('keypress', onKeyPress);
@@ -13,16 +15,18 @@ function DrumMachine() {
     const keysArray = ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'];
     if (keysArray.includes(e.key.toUpperCase())) {
       playSound(e.key.toUpperCase());
-    } else {
-      console.log('else');
     }
   };
+
   const playSound = (letter) => {
-    document.getElementById(letter).play();
+    const audioElem = document.getElementById(letter);
+    audioElem.play(); //Play sound
+    soundStr.current.textContent = audioElem.parentElement.id; //Update content
   };
+
   return (
     <div id='drum-machine'>
-      <DrumPedsDisplay playSound={playSound} />
+      <DrumPedsDisplay playSound={playSound} soundStr={soundStr} />
     </div>
   );
 }
